@@ -23,6 +23,9 @@ namespace Planner.Controls
         public ToDoControl()
         {
             InitializeComponent();
+
+            //CheckboxList.ItemsSource = new List<string>() { "Bla", "Bla", "bla bla" };
+            CheckboxList.ItemsSource = Enumerable.Range(0, 100).Select(i=>i.ToString()).ToList();
         }
     }
 }
