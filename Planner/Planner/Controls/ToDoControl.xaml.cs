@@ -27,5 +27,19 @@ namespace Planner.Controls
             //CheckboxList.ItemsSource = new List<string>() { "Bla", "Bla", "bla bla" };
             CheckboxList.ItemsSource = Enumerable.Range(0, 100).Select(i=>i.ToString()).ToList();
         }
+
+        private void OnItemSelected(object sender, RoutedEventArgs e)
+        {
+            var list = (ListBox)sender;
+            var listItem = (ListBoxItem) list.ItemContainerGenerator.ContainerFromIndex(list.SelectedIndex);
+            var box = listItem.GetChildOfType<TextBox>();
+            box?.Focus();
+        }
+
+        private void FocusOnLoad(object sender, RoutedEventArgs e)
+        {
+            if (sender is not TextBox textBox) return;
+            textBox.Focus();
+        }
     }
 }

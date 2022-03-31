@@ -13,17 +13,20 @@
         </Grid.RowDefinitions>
         
         <!-- TODO list -->
-        <ListBox Margin="10" Name="CheckboxList" Grid.Row="0">
+        <ListBox Margin="10" Name="CheckboxList" Grid.Row="0" SelectionChanged="OnItemSelected" SelectionMode="Single">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
+                    
                         <CheckBox Grid.Column="0" Margin="0 0 5 0"></CheckBox>
-                        <TextBox Grid.Column="1" DataContext="bbb" AcceptsReturn="True" />
+                        <Grid Grid.Column="1">
+                            <TextBox DataContext="bbb" AcceptsReturn="True" Loaded="FocusOnLoad" Focusable="True" TextWrapping="NoWrap" Name="TodoTextInput"
+                                     BorderThickness="0" Background="Transparent"/>    
+                        </Grid>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
