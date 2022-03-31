@@ -7,7 +7,7 @@
         xmlns:c="clr-namespace:Planner.Controls"
         mc:Ignorable="d"
         Title="Planner" Height="450" Width="800">
-    <StackPanel>
-        <c:ToDoControl/>
-    </StackPanel>
+    <DockPanel>
+        <c:ToDoControl Margin="10"/>
+    </DockPanel>
 </Window>
