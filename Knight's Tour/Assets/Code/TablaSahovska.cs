@@ -6,7 +6,12 @@ public class TablaSahovska : MonoBehaviour
 {
     public GameObject BeloPoljePrefarb;
     public GameObject CrnoPoljePrefarb;
-    // Start is called before the first frame update
+    
+    public GameObject Konj;
+
+    public Vector3 KrajnjaDestinacija;
+    public float Brzina = 1;
+
     void Start()
     {
         NapraviTablu(); 
@@ -14,7 +19,6 @@ public class TablaSahovska : MonoBehaviour
 
     private void NapraviTablu() 
     {
-        // instanciramo i pozicioniramo sva polja - odredjene boje
 
         for (int i = 0; i < 8; i++) 
         { 
@@ -28,10 +32,34 @@ public class TablaSahovska : MonoBehaviour
 
     }
 
-
-    // Update is called once per frame
     void Update()
     {
-        
+        UpravljajKlikom();
+
+        var trenutna = Konj.transform.position;
+        var put = Brzina * Time.deltaTime;
+        var nova = Vector3.MoveTowards(trenutna, KrajnjaDestinacija, put);
+        Konj.transform.position = nova;
+
+    }
+
+    private void UpravljajKlikom()
+    {
+        if (!Input.GetMouseButtonDown(0))
+            return;
+
+        var ray = Camera.main!.ScreenPointToRay(Input.mousePosition);
+
+        if (!Physics.Raycast(ray, out var raycastHit, 100f))
+            return;
+
+        if (raycastHit.transform != null)
+        {
+            var pozicija = raycastHit.transform.position;
+            var kolona = Mathf.RoundToInt(pozicija.x);
+            var vrsta = Mathf.RoundToInt(pozicija.z);
+            KrajnjaDestinacija = pozicija;
+            Debug.Log($"Pogodak! Pozicija: {kolona}, {vrsta}", raycastHit.transform);
+        }
     }
 }
