@@ -318,8 +318,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/Code/Polje.cs"
+"Assets/Code/Pozicija.cs"
+"Assets/Code/PravilaKretanja.cs"
 "Assets/Code/TablaSahovska.cs"
+"Assets/Code/Tajmer.cs"
 "Assets/Free Low Poly Chess Set/Example/Scripts/CameraRotate.cs"
+"Assets/ICE_sushishop/scripts_probes/RealtimeReflection.cs"
+"Assets/ICE_sushishop/scripts_probes/RealtimeReflection1.cs"
 -langversion:8.0
 
 /deterministic

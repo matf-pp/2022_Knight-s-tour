@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Planner.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+<<<<<<< Updated upstream
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -38,4 +39,20 @@
             <TextBox Name="NewTaskInput" Margin="0 0 5 0"/>
         </DockPanel>
     </Grid>
+=======
+    <DockPanel>        
+
+        <ListView Margin="10" Name="todoListView" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Height="20" Background="Red" HorizontalAlignment="Stretch" LastChildFill="True">
+                        <CheckBox Name="Checkbox"  VerticalAlignment="Center" Margin="0,0,5,0" DockPanel.Dock="Left"/>
+                        <TextBox Name="Text" />
+                    </DockPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </DockPanel>
+>>>>>>> Stashed changes
 </UserControl>

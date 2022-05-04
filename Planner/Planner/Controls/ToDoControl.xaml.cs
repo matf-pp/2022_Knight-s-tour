@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Planner.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace Planner.Controls
         {
             InitializeComponent();
 
+<<<<<<< Updated upstream
             //CheckboxList.ItemsSource = new List<string>() { "Bla", "Bla", "bla bla" };
             CheckboxList.ItemsSource = Enumerable.Range(0, 100).Select(i=>i.ToString()).ToList();
         }
@@ -40,6 +42,14 @@ namespace Planner.Controls
         {
             if (sender is not TextBox textBox) return;
             textBox.Focus();
+=======
+            todoListView.ItemsSource = new List<TodoLineModel>()
+            {
+                new TodoLineModel(){ Text = "Bla"},
+                new TodoLineModel(){ Text = "Bla 2"},
+            };
+
+>>>>>>> Stashed changes
         }
     }
 }
