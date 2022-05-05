@@ -10,6 +10,8 @@ public class Tajmer : MonoBehaviour
 
     public IEnumerator Start()
     {
+        yield return new WaitUntil(() => Tabla.StanjeIgre == StanjeIgre.UToku);
+
         while (true)
         {
             yield return new WaitForSeconds(1);
