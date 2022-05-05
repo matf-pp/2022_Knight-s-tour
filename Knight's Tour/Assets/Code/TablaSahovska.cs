@@ -61,10 +61,11 @@ public class TablaSahovska : MonoBehaviour
     private void OznaciPoljaKojaTrebaDaSePosete()
     {
         pozicijeKojeTrebaObici = new List<Pozicija>();
+        pozicijeKojeTrebaObici.Clear();
 
         var random = new Random((int)DateTime.Now.Ticks);
 
-        var brojElementa = random.Next(5, 10);
+        var brojElementa = random.Next(5, 15);
 
         for (int i = 0; i < brojElementa; i++)
         {
@@ -72,19 +73,28 @@ public class TablaSahovska : MonoBehaviour
             int vrsta = random.Next(0, 8);
 
             var novaPozicija = new Pozicija(kol, vrsta);
-            if (!pozicijeKojeTrebaObici.Contains(novaPozicija)) 
+            int provera = 0;
+            for (int j = 0; j < pozicijeKojeTrebaObici.Count; j++)
+            {
+                if (pozicijeKojeTrebaObici[j].Kolona == novaPozicija.Kolona && pozicijeKojeTrebaObici[j].Red == novaPozicija.Red)
+                {
+                    provera = 1;
+                    Debug.Log("Random x2 " + novaPozicija);
+                }
+
+            }
+            if (provera == 0)
             {
                 pozicijeKojeTrebaObici.Add(novaPozicija);
                 var polje = DohvatiPolje(novaPozicija);
                 polje.UpaliX();
                 Debug.Log("Oznaceno: " + novaPozicija);
-            } else
-            {
-                Debug.Log("Random x2");
+                provera = 0;
             }
-            
+
         }
     }
+
 
     public Polje DohvatiPolje(Pozicija pozicija)
     {
