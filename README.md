@@ -12,6 +12,6 @@ Projekat je u celosti napisan u jeziku C#. Od tehnologija je korišćen Unity.
 Projekat je namenjen operativnom sistemu Windows.
 
 ### Autorke:
-Mira Milosavljevic: mr18140@matf.bg.ac.rs <br />
+Mira Milosavljević: mr18140@matf.bg.ac.rs <br />
 Marija Konatar: mr18319@matf.bg.ac.rs <br />
-Nevena Milisavljevic: mr18111@matf.bg.ac.rs
+Nevena Milisavljević: mr18111@matf.bg.ac.rs
